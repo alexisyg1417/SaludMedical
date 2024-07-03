@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/estilo.css">
+    <link rel="icon" href="img/Logo.png" type="image/png">
+    <script src="js/hamburger.js" async></script>
+    <script src="js/app.js" async></script>
+    <title>Farmacia </title>
+</head>
+<style>
+    .profile {
+    width: 40px; /* Tamaño del contenedor de la foto de perfil */
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 20px; /* Espacio entre los enlaces y la foto de perfil */
+}
+
+.profile-img {
+    width: 100%; /* Ajusta el tamaño de la imagen dentro del contenedor */
+    height: auto;
+}
+</style>
+<body>
+    <br><br><br><br><br>
+    <nav class="navbar">
+        <div class="navbar-left">
+           <a href="Principal - Doctor.html"> <img src="img/Logo.png" alt="Logo" class="logo"> </a>
+            <a class="tit-lo">Farmacia</a>
+        </div>
+        <div class="navbar-right" id="navbar-menu">
+            <a href="carrito.html" class="nav-link " >Farmacia</a>
+            <a href="ExpedienteDoc.html" class="nav-link">Expediente</a>
+            <div class="profile">
+                <a href="./perfilpa.html"><img src="./img/1.jpg" alt="Foto de perfil" class="profile-img"></a>
+            </div>
+        </div>
+        <button class="hamburger" id="hamburger-menu">
+            ☰
+        </button>
+    </nav>
+    <br><br><br><br>
+    <center>
+    <h1>SaludMedical | Farmacia</h1>
+</center>
+    <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <div class="item">
+                <span class="titulo-item">Ibuprofeno</span>
+                <img src="./img/boxengasse.png" alt="" class="img-item">
+                <span class="precio-item">$70</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Loratadina</span>
+                <img src="img/englishrose.png" alt="" class="img-item">
+                <span class="precio-item">$40</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Misoprostol</span>
+                <img src="img/knocknap.png" alt="" class="img-item">
+                <span class="precio-item">$750</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">PostDay</span>
+                <img src="img/lanight.png" alt="" class="img-item">
+                <span class="precio-item">$60</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Paracetamol</span>
+                <img src="img/silverall.png" alt="" class="img-item">
+                <span class="precio-item">$100</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">metaxalón</span>
+                <img src="img/skinglam.png" alt="" class="img-item">
+                <span class="precio-item">$700</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Barmicil</span>
+                <img src="img/midimix.png" alt="" class="img-item">
+                <span class="precio-item">$25</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">VapoRub</span>
+                <img src="img/sirblue.png" alt="" class="img-item">
+                <span class="precio-item">$50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Perrigo</span>
+                <img src="img/middlesteel.png" alt="" class="img-item">
+                <span class="precio-item">$50</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Clear Blue</span>
+                <img src="img/clearblue.png" alt="" class="img-item">
+                <span class="precio-item">$150</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">SICO</span>
+                <img src="img/sico.png" alt="" class="img-item">
+                <span class="precio-item">$75</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Prudence Lub</span>
+                <img src="img/prudence.png" alt="" class="img-item">
+                <span class="precio-item">$100</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+            <div class="carrito-items">
+                <!-- 
+                <div class="carrito-item">
+                    <img src="img/boxengasse.png" width="80px" alt="">
+                    <div class="carrito-item-detalles">
+                        <span class="carrito-item-titulo">Box Engasse</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="1" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <span class="carrito-item-precio">$15.000</span>
+                    </div>
+                   <span class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                   </span>
+                </div>
+                <div class="carrito-item">
+                    <img src="img/skinglam.png" width="80px" alt="">
+                    <div class="carrito-item-detalles">
+                        <span class="carrito-item-titulo">Skin Glam</span>
+                        <div class="selector-cantidad">
+                            <i class="fa-solid fa-minus restar-cantidad"></i>
+                            <input type="text" value="3" class="carrito-item-cantidad" disabled>
+                            <i class="fa-solid fa-plus sumar-cantidad"></i>
+                        </div>
+                        <span class="carrito-item-precio">$18.000</span>
+                    </div>
+                   <button class="btn-eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                   </button>
+                </div>
+                 -->
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+    <br><br><br><br>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="Logotipo" width="100">
+            </div>
+            <div class="footer-info">
+                <p>Correo: <a href="mailto:info@ejemplo.com">info@ejemplo.com</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="#link1">Link 1</a>
+                <a href="#link2">Link 2</a>
+                <a href="#link3">Link 3</a>
+                
+            </div>
+            
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+      </footer>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedientes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/homeDoctor.css">
+    <link rel="icon" href="./img/Logo.png" type="image/png">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <div class="navbar-left">
+                <a href="Principal - Doctor.html"><img src="../5-plantillas-main/img/Logo.png" alt="Logo" class="logo"></a>
+                <a class="tit-lo">Expedientes</a>
+            </div>
+            <button class="hamburger" id="hamburger-menu">
+                ☰
+            </button>
+            <div class="navbar-right" id="navbar-menu">
+                <a href="carrito - doctor.html" class="nav-link">Farmacia</a>
+                <a href="homeDoctor.html" class="nav-link">Expedientes</a>
+                <div class="profile">
+                    <a href="./perfildo.html"><img src="./img/1.jpg" alt="Foto de perfil" class="profile-img"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.getElementById('hamburger-menu').addEventListener('click', function() {
+            var menu = document.getElementById('navbar-menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+        <br><br><br><br>
+        <div class="container mt-5">
+            <div class="border-square text-center">
+                <h3>Consulta de expedientes</h3>
+            </div>
+            <div class="calendar-container">
+                <label for="appointment-date" class="form-label">Selecciona una fecha</label>
+                <input type="date" class="form-control" id="appointment-date">
+                <button class="btn btn-primary mt-3" id="add-record-button">Agregar Registro</button>
+            </div>
+            <div class="card-container mt-5" id="card-container"></div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="addRecordModal" tabindex="-1" aria-labelledby="addRecordModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addRecordModalLabel">Agregar Nuevo Registro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="addRecordForm">
+                            <div class="mb-3">
+                                <label for="record-title" class="form-label">Título</label>
+                                <input type="text" class="form-control" id="record-title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="record-description" class="form-label">Descripción</label>
+                                <textarea class="form-control" id="record-description" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="record-image" class="form-label">URL de la Imagen</label>
+                                <input type="text" class="form-control" id="record-image" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Agregar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><br><br><br>  <br><br><br><br>  <br><br><br><br>
+    <footer class="new-footer">
+        <div class="new-footer-content">
+            <div class="new-footer-logo">
+                <img src="./img/Logo.png" alt="Logotipo" width="100">
+            </div>
+            <div class="new-footer-info">
+                <p>Correo: <a href="mailto:info@ejemplo.com">info@ejemplo.com</a></p>
+            </div>
+            <div class="new-footer-links">
+                <a href="#link1">Link 1</a>
+                <a href="#link2">Link 2</a>
+                <a href="#link3">Link 3</a>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+     
+      
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        const appointmentContainer = document.getElementById('appointment-container');
+        const appointmentDate = document.getElementById('appointment-date');
+        const addAppointmentButton = document.getElementById('add-appointment-button');
+        const addAppointmentModal = new bootstrap.Modal(document.getElementById('addAppointmentModal'));
+        const addAppointmentForm = document.getElementById('addAppointmentForm');
+    
+        const appointmentData = {
+            '2024-06-13': [
+                { patientName: 'Juan Pérez', appointmentType: 'Consulta General', appointmentTime: '10:00', description: 'Revisión general.', image: 'image1.jpg' },
+                { patientName: 'María López', appointmentType: 'Examen de Sangre', appointmentTime: '11:00', description: 'Análisis completo de sangre.', image: 'image2.jpg' },
+                { patientName: 'Carlos Ramírez', appointmentType: 'Rayos X', appointmentTime: '12:00', description: 'Radiografía de tórax.', image: 'image3.jpg' }
+            ],
+            '2024-06-14': [
+                { patientName: 'Ana Torres', appointmentType: 'Vacunación', appointmentTime: '09:00', description: 'Vacuna contra la gripe.', image: 'image4.jpg' },
+                { patientName: 'Pedro García', appointmentType: 'Consulta Pediátrica', appointmentTime: '10:00', description: 'Consulta de control para niños.', image: 'image5.jpg' },
+                { patientName: 'Luisa Fernández', appointmentType: 'Ecografía', appointmentTime: '11:00', description: 'Ecografía abdominal.', image: 'image6.jpg' }
+            ]
+        };
+    
+        appointmentDate.addEventListener('change', function() {
+            const selectedDate = appointmentDate.value;
+            const appointments = appointmentData[selectedDate] || [];
+    
+            appointmentContainer.innerHTML = appointments.map(appointment => `
+                <div class="card">
+                    <div class="card-image" style="background-image: url('${appointment.image}');"></div>
+                    <div class="card-content">
+                        <h5>${appointment.appointmentType} - ${appointment.patientName}</h5>
+                        <p><strong>Hora:</strong> ${appointment.appointmentTime}</p>
+                        <p>${appointment.description}</p>
+                    </div>
+                </div>
+            `).join('');
+    
+            // Ocultar el contenedor de citas si no hay ninguna seleccionada
+            if (appointments.length === 0) {
+                appointmentContainer.style.display = 'none';
+            } else {
+                appointmentContainer.style.display = 'grid';
+            }
+        });
+    
+        addAppointmentButton.addEventListener('click', function() {
+            addAppointmentModal.show();
+        });
+    
+        addAppointmentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedDate = appointmentDate.value;
+            if (!selectedDate) {
+                alert('Por favor, selecciona una fecha primero.');
+                return;
+            }
+    
+            const patientName = document.getElementById('patient-name').value;
+            const appointmentType = document.getElementById('appointment-type').value;
+            const appointmentTime = document.getElementById('appointment-time').value;
+            const description = document.getElementById('appointment-description').value;
+            const image = document.getElementById('appointment-image').value;
+    
+            if (!appointmentData[selectedDate]) {
+                appointmentData[selectedDate] = [];
+            }
+    
+            appointmentData[selectedDate].push({ patientName, appointmentType, appointmentTime, description, image });
+            addAppointmentModal.hide();
+            addAppointmentForm.reset();
+            appointmentDate.dispatchEvent(new Event('change'));
+        });
+    
+        // Inicialmente oculta el contenedor de citas
+        appointmentContainer.style.display = 'none';
+    </script>
+    
+</body>
+</html>

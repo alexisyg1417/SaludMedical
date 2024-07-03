@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+  <head><script src="js/color-modes.js"></script>
+
+    <meta charset="utf-8">
+    <title>Inicio de sesion</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="./css/Inicio.css" rel="stylesheet">
+    <link href="sign-in.css" rel="stylesheet">
+  </head>
+
+  <body class="d-flex align-items-center py-4 bg-body-tertiary">
+    <main class="form-signin form-container">
+  
+      <form method="POST" action="inicioSesionM.php">
+        <center>
+        <img class="mb-4" src="./img/Logo.png" alt="" width="200" height="200"> <a class="h1"></a>
+        <h1 class="h3 mb-3 fw-normal">Inicio de sesión Médico</h1>
+
+        <div>
+            <hr>
+            <?php
+                if(isset($_GET['error'])){
+                    ?>
+                    <p class="error">
+                        <?php
+                        echo $_GET['error']
+                        ?>
+                    </p>
+            <?php
+                }
+            ?>
+        </div>
+    
+        <div class="form-floating">
+          <input type="email" class="form-control" placeholder="name@example.com" name="Correo">
+          <label for="floatingInput">Correo</label>
+        </div>
+    
+        <div class="form-floating">
+          <input type="password" class="form-control" placeholder="Password" name="Contraseña">
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" placeholder="" name="Matricula">
+          <label for="floatingPassword">Matrícula</label>
+        </div>
+        <button class="btn btn-primary w-100 py-2" type="submit">Iniciar sesión</button>
+        <p></p>
+        <a href="#" class="btn btn-link w-100 py-2" type="Volver">Volver al inicio</a>
+        <p class="mt-5 mb-3 text-body-secondary">&copy; 2024</p>
+    
+      </form>
+    </main>
+<script src="js/bootstrap.bundle.min.js"></script>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="Inicio.js" type="text/javascript"></script>
+</html>
